@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Playwrite+GB+J:ital,wght@0,100..400;1,100..400&display=swap"
+        rel="stylesheet">
+
+   
+    <title>Converted Tailwind CSS Layout</title>
+</head>
+<style>
+    .container{
+        width: 100%;
+        display: flex;
+        background-color: whitesmoke;
+        height: 100vh;
+    }
+    .side-1,.side-2{
+        flex-grow: 1;
+        width: 50%;
+    }
+    .side-1{
+        background:whitesmoke;
+        display: flex;
+        flex-direction:column;
+       align-items: center;
+       color: gray;
+       position: relative;
+
+
+    }
+    .side-2{
+        background: white;
+        display: flex;
+        text-align: center;
+        flex-direction:column;
+       align-items: center;
+       color: gray;
+       position: relative;
+    }
+    form{
+        margin-top: 150px;
+        display: flex;
+        flex-direction: column;
+        gap:15px;
+        padding-left: 10px;
+        padding-right: 10px;
+background: whitesmoke;
+width:400px;
+height: 340px;
+    }
+    .images{
+               margin-top: 20px;
+border-radius: 10px;
+        background-size:cover;
+width:500px;
+height: 400px; 
+margin-bottom: 20px; 
+    }
+    form p{
+        margin-bottom: 15px;
+    }
+    h2{
+        margin: 0;
+        color:steelblue;
+        margin-left: 10px;
+    }
+    .top-bar{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+        position: absolute;
+        border-bottom: 1px solid #D1D5DB;
+        top: 0;
+    }
+    .info{
+        display: flex;
+        align-items: center;
+        gap:15px;
+        margin-right: 10px;
+    }
+    .info p{
+        color: black;
+    }
+    .info button{
+        height:29px;
+        width: 70px;
+        background: whitesmoke;
+        border: 1px solid #D1D5DB;
+        border-radius: 6px;
+      
+    }
+</style>
+<body>
+    <div class="container">
+<div class="side-1">
+    <div class="top-bar">
+        <h2>HR DIVE</h2>
+        <div class="info">
+            <i class="fa-regular fa-circle-question fa-lg"></i>
+            <p>Don't have an account?</p>
+            <button>Sign Up</button>
+        </div>
+    </div>
+<form>
+<h2>New Password</h2>
+<p>please enter a new password</p>
+<label>New Password</label>
+<input type="text"style="padding: 10px;">
+<label>Re-enter Password</label>
+<input type="text" style="padding: 10px;">
+<button style="background: steelblue; color: white;height: 40px;border:none; border-radius: 10px;margin-top: 10px;">Change Password</button>
+</form>
+</div>
+<div class="side-2">
+<div class="images" id="images">
+
+</div>
+<h2>Control your employees</h2>
+<p>With our Smart Tool invert intelligfently and discover a better way to manage your entire employees easily</p>
+</div>
+    </div>
+    <script>
+        let image = document.getElementById('images');
+        let images = [
+            'images/emp-payroll.png',
+            'images/erp.png',
+            'images/ems.webp'
+        ];
+        let currentIndex = 0;
+    
+        
+        function updateImage() {
+            image.style.backgroundImage = `url('${images[currentIndex]}')`;
+            currentIndex = (currentIndex + 1) % images.length; // Cycle back to the first image
+        }
+    
+     
+        setInterval(updateImage, 3000);
+    
+   
+        updateImage();
+    </script>
+    
+</body>
+</html>
