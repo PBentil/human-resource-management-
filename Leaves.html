@@ -93,87 +93,127 @@
             </div>
             <!---Put Your Code for the body HERE-->
             <div class="main-content">
-                <div class="leave-graph">
-                    <canvas id="leave-chart"></canvas>
-                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                    <script>
-                        // Data for the graph
-                        const leaveData = {
-                            labels: [
+                <div class="employee-graphs">
+                    <div class="employee-first">
+                        <canvas id="employee-graph"></canvas>
+                        <script>
+                            // Data for the graph
+                            const labels = [
                                 'January', 'February', 'March', 'April', 'May', 'June',
                                 'July', 'August', 'September', 'October', 'November', 'December'
-                            ], // X-axis: Months
-                            datasets: [
-                                {
-                                    label: 'Employees',
-                                    data: [15, 20, 25, 30, 35, 28, 40, 45, 38, 32, 25, 20], // Employees leave percentage
-                                    backgroundColor: 'rgba(75, 192, 192, 0.7)', // Color for employee bars
-                                    borderColor: 'rgba(75, 192, 192, 1)', // Border for employee bars
-                                    borderWidth: 1
-                                },
-                                {
-                                    label: 'Interns',
-                                    data: [10, 15, 20, 18, 25, 22, 30, 35, 28, 25, 18, 15], // Interns leave percentage
-                                    backgroundColor: 'rgba(255, 159, 64, 0.7)', // Color for intern bars
-                                    borderColor: 'rgba(255, 159, 64, 1)', // Border for intern bars
-                                    borderWidth: 1
-                                }
-                            ]
-                        };
+                            ]; // X-axis labels
 
-                        // Configuration for the bar chart
-                        const leaveConfig = {
-                            type: 'bar',
-                            data: leaveData,
-                            options: {
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                plugins: {
-                                    title: {
-                                        display: true,
-                                        text: 'Employee and Intern Leave Statistics' // Graph title
+                            const data = {
+                                labels: labels,
+                                datasets: [
+                                    {
+                                        label: 'Employees',
+                                        data: [65, 59, 80, 81, 56, 55, 40, 70, 85, 90, 75, 50], // Replace with your data
+                                        borderColor: 'rgba(255, 99, 132, 1)',
+                                        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                                        stack: 'combined',
+                                        type: 'bar'
                                     },
-                                    legend: {
-                                        position: 'top' // Position of the legend
+                                    {
+                                        label: 'Interns',
+                                        data: [28, 48, 40, 19, 86, 27, 90, 60, 50, 95, 80, 65], // Replace with your data
+                                        borderColor: 'rgba(54, 162, 235, 1)',
+                                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                                        stack: 'combined'
                                     }
-                                },
-                                scales: {
-                                    x: {
+                                ]
+                            };
+
+                            // Graph configuration
+                            const config = {
+                                type: 'line', // Base type
+                                data: data,
+                                options: {
+                                    plugins: {
                                         title: {
                                             display: true,
-                                            text: 'Months' // Label for the X-axis
+                                            text: 'Employee Performance Over the Year' // Graph title
                                         }
                                     },
-                                    y: {
-                                        beginAtZero: true,
-                                        min: 0, // Start Y-axis at 0
-                                        max: 50, // Maximum Y-axis value
-                                        ticks: {
-                                            stepSize: 10 // Steps of 10
+                                    scales: {
+                                        y: {
+                                            stacked: true,
+                                            beginAtZero: true // Ensures the graph starts at 0
+                                        }
+                                    }
+                                }
+                            };
+
+                            // Render the graph
+                            const ctx = document.getElementById('employee-graph').getContext('2d');
+                            new Chart(ctx, config);
+                        </script>
+                    </div>
+
+
+
+                    <div class="top-employees" style=" margin: 0 auto;">
+                        <canvas id="top-employees"></canvas>
+                        <script>
+                            // Data for the graph
+                            const topEmployeesData = {
+                                labels: ['John Doe', 'Jane Smith', 'Michael Brown'], // Employee names
+                                datasets: [{
+                                    label: 'Performance Score',
+                                    data: [95, 89, 82], // Scores for the top employees
+                                    backgroundColor: [
+                                        'rgba(75, 192, 192, 0.8)', // Color for John Doe
+                                        'rgba(255, 159, 64, 0.8)', // Color for Jane Smith
+                                        'rgba(153, 102, 255, 0.8)'  // Color for Michael Brown
+                                    ],
+                                    borderColor: [
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(255, 159, 64, 1)',
+                                        'rgba(153, 102, 255, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            };
+
+                            // Configuration for the horizontal bar chart
+                            const topEmployeesConfig = {
+                                type: 'bar', // Chart type
+                                data: topEmployeesData,
+                                options: {
+                                    indexAxis: 'y', // Horizontal bar chart
+                                    scales: {
+                                        x: {
+                                            beginAtZero: true // Ensures scores start at 0
+                                        }
+                                    },
+                                    plugins: {
+                                        legend: {
+                                            display: false // Hides the legend
                                         },
                                         title: {
                                             display: true,
-                                            text: 'Leave Percentage (%)' // Label for the Y-axis
+                                            text: 'Top 3 Employees of the Month' // Chart title
                                         }
                                     }
                                 }
-                            }
-                        };
+                            };
 
-                        // Render the graph
-                        const leaveCtx = document.getElementById('leave-chart').getContext('2d');
-                        new Chart(leaveCtx, leaveConfig);
-                    </script>
-                </div>
+                            // Render the graph
+                            const topEmployeesCtx = document.getElementById('top-employees').getContext('2d');
+                            new Chart(topEmployeesCtx, topEmployeesConfig);
+                        </script>
+                    </div>
+                </div><br><br>
 
-
-                <div class="leave-approvals">
-                    <div class="leave-approvals-flex">
-                        <h2>Employees Leave <span>Approvals</span></h2>
-                        <div class="input">
-                            <input type="search" placeholder="search here......">
+                <div class="employee-list">
+                    <div class="input-space">
+                        <h2>Employees on <span>leave</span></h2>
+                        <div class="space">
+                            <input type="search" placeholder="search employee.....">
                         </div>
                     </div>
+                    <!--the list of employee will be here-->
+
                 </div>
             </div>
         </div>
