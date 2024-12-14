@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
         integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
@@ -14,11 +13,14 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Playwrite+GB+J:ital,wght@0,100..400;1,100..400&display=swap"
         rel="stylesheet">
-    <title>index</title>
+
+
+    <title>Converted Tailwind CSS Layout</title>
 </head>
 
 <body>
     <div class="container">
+        <!-- Sidebar -->
         <div class="sidebar">
             <div class="heading">
                 <h2>HR DIVE</h2>
@@ -78,74 +80,69 @@
             </div>
             <div class="icons">
                 <i class="fa-solid fa-gear fa-lg"></i> <a href="security-privacy.html">Settings</a>
+
             </div>
             <div class="icons">
                 <i class="fa-solid fa-headphones fa-lg"></i><a href="/">Help & Support</a>
             </div>
         </div>
 
+
         <!-- Navbar -->
         <div class="navigation">
             <div class="navbar">
                 <div class="links">
                     <div class="prof">
-                        <h3>Welcome back,<span>Frank</span></h3>
+                        <h3>Welcome back,<span>Ronald!</span></h3>
 
                     </div>
                     <div class="links-buttons">
                         <i class="fa-solid fa-magnifying-glass fa-lg relative right-5"
                             style="color: gray;padding-right: 8px;"></i>
                         <i class="fa-regular fa-bell  fa-lg" style="color: gray;"></i>
-
+                       
                     </div>
                 </div>
-                <div class="payroll-content">
-                    <h1>Payroll</h1>
+                <div class="content">
+                    <h1>Announcements & Notices</h1>
 
-                    <!-- Payroll Status -->
-                    <section class="payroll-status">
-                        <h2>Payroll Status</h2>
-                        <div class="status-card">
-                            <p>Current Month Payroll:</p>
-                            <h3 class="status">Pending</h3>
+                    <!-- Notice Board Section -->
+                    <section class="notice-board">
+                        <h2>Notice Board</h2>
+                        <div class="announcement">
+                            <h3>Company Retreat 2024</h3>
+                            <p>Join us for our annual company retreat on January 15th, 2024. Check your email for
+                                details.</p>
+                            <button class="mark-read" onclick="markAsRead(this)">Mark as Read</button>
                         </div>
-                    </section>
 
-                    <!-- Payslips -->
-                    <section class="payslips">
-                        <h2>Payslips</h2>
-                        <table class="payslip-table">
-                            <thead>
-                                <tr>
-                                    <th>Month</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>November 2024</td>
-                                    <td>Paid</td>
-                                    <td><a href="payslip-november.pdf" download>Download</a></td>
-                                </tr>
-                                <tr>
-                                    <td>October 2024</td>
-                                    <td>Paid</td>
-                                    <td><a href="payslip-october.pdf" download>Download</a></td>
-                                </tr>
-                                <tr>
-                                    <td>September 2024</td>
-                                    <td>Paid</td>
-                                    <td><a href="payslip-september.pdf" download>Download</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="announcement">
+                            <h3>Policy Update: Remote Work</h3>
+                            <p>Updated remote work policy effective from February 1st, 2024. Review the policy document
+                                for
+                                details.</p>
+                            <button class="mark-read" onclick="markAsRead(this)">Mark as Read</button>
+                        </div>
+
+                        <div class="announcement">
+                            <h3>Holiday Schedule</h3>
+                            <p>The office will remain closed on December 25th and January 1st for the holidays. Happy
+                                Holidays!</p>
+                            <button class="mark-read" onclick="markAsRead(this)">Mark as Read</button>
+                        </div>
                     </section>
                 </div>
             </div>
         </div>
     </div>
     <script src="script.js"></script>
+    <script>
+        function markAsRead(button) {
+            button.textContent = "Read";
+            button.disabled = true;
+            button.classList.add("read");
+        }
+    </script>
 </body>
 
 </html>
