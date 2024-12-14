@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
         integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -96,52 +96,70 @@
                         <i class="fa-solid fa-magnifying-glass fa-lg relative right-5"
                             style="color: gray;padding-right: 8px;"></i>
                         <i class="fa-regular fa-bell  fa-lg" style="color: gray;"></i>
-
+                      
                     </div>
                 </div>
-                <div class="payroll-content">
-                    <h1>Payroll</h1>
 
-                    <!-- Payroll Status -->
-                    <section class="payroll-status">
-                        <h2>Payroll Status</h2>
-                        <div class="status-card">
-                            <p>Current Month Payroll:</p>
-                            <h3 class="status">Pending</h3>
-                        </div>
+                <main class="leave-management">
+                    <h1>Leave Management</h1>
+
+                    <!-- Request Leave Section -->
+                    <section class="request-leave">
+                        <h2>Request Leave</h2>
+                        <form action="process_leave.php" method="POST">
+                            <label for="leave-type">Type of Leave:</label>
+                            <select id="leave-type" name="leave_type" required>
+                                <option value="sick">Sick Leave</option>
+                                <option value="vacation">Vacation</option>
+                                <option value="maternity">Maternity Leave</option>
+                                <option value="other">Other</option>
+                            </select>
+
+                            <label for="start-date">Start Date:</label>
+                            <input class="start" type="date" id="start-date" name="start_date" required>
+
+                            <label for="end-date">End Date:</label>
+                            <input class="end" type="date" id="end-date" name="end_date" required>
+
+                            <label for="reason">Reason:</label>
+                            <textarea class="reason_for" id="reason" name="reason" rows="4"
+                                placeholder="Enter your reason here..." required></textarea>
+
+                            <button type="submit" class="btn-submit">Submit Request</button>
+                        </form>
                     </section>
 
-                    <!-- Payslips -->
-                    <section class="payslips">
-                        <h2>Payslips</h2>
-                        <table class="payslip-table">
+                    <!-- Leave History Section -->
+                    <section class="leave-history">
+                        <h2>Leave History</h2>
+                        <table class="history-table">
                             <thead>
                                 <tr>
-                                    <th>Month</th>
+                                    <th>Date</th>
+                                    <th>Type of Leave</th>
                                     <th>Status</th>
-                                    <th>Action</th>
+                                    <th>Reason</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>November 2024</td>
-                                    <td>Paid</td>
-                                    <td><a href="payslip-november.pdf" download>Download</a></td>
+                                    <td>2024-11-28</td>
+                                    <td>Vacation</td>
+                                    <td>Approved</td>
+                                    <td>Family trip</td>
                                 </tr>
                                 <tr>
-                                    <td>October 2024</td>
-                                    <td>Paid</td>
-                                    <td><a href="payslip-october.pdf" download>Download</a></td>
-                                </tr>
-                                <tr>
-                                    <td>September 2024</td>
-                                    <td>Paid</td>
-                                    <td><a href="payslip-september.pdf" download>Download</a></td>
+                                    <td>2024-10-15</td>
+                                    <td>Sick</td>
+                                    <td>Rejected</td>
+                                    <td>Common cold</td>
                                 </tr>
                             </tbody>
                         </table>
                     </section>
-                </div>
+                </main>
+
+
             </div>
         </div>
     </div>

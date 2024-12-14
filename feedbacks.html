@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
         integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
@@ -14,11 +13,14 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Playwrite+GB+J:ital,wght@0,100..400;1,100..400&display=swap"
         rel="stylesheet">
-    <title>index</title>
+
+
+    <title>Converted Tailwind CSS Layout</title>
 </head>
 
 <body>
     <div class="container">
+        <!-- Sidebar -->
         <div class="sidebar">
             <div class="heading">
                 <h2>HR DIVE</h2>
@@ -84,12 +86,13 @@
             </div>
         </div>
 
+
         <!-- Navbar -->
         <div class="navigation">
             <div class="navbar">
                 <div class="links">
                     <div class="prof">
-                        <h3>Welcome back,<span>Frank</span></h3>
+                        <h3>Welcome back,<span>Ronald!</span></h3>
 
                     </div>
                     <div class="links-buttons">
@@ -99,44 +102,56 @@
 
                     </div>
                 </div>
-                <div class="payroll-content">
-                    <h1>Payroll</h1>
 
-                    <!-- Payroll Status -->
-                    <section class="payroll-status">
-                        <h2>Payroll Status</h2>
-                        <div class="status-card">
-                            <p>Current Month Payroll:</p>
-                            <h3 class="status">Pending</h3>
-                        </div>
+                <div class="feed-content">
+                    <h1>Feedbacks & Complaints</h1>
+
+                    <!-- Feedback Form -->
+                    <section class="feedback-form">
+                        <h2>Submit Feedback</h2>
+                        <form action="#" method="POST">
+                            <label for="feedback-type">Feedback Type:</label>
+                            <select id="feedback-type" name="feedback_type" required>
+                                <option value="" disabled selected>Select type</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="complaint">Complaint</option>
+                            </select>
+
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="5"
+                                placeholder="Write your feedback or complaint here" required></textarea>
+
+                            <button type="submit">Submit</button>
+                        </form>
                     </section>
 
-                    <!-- Payslips -->
-                    <section class="payslips">
-                        <h2>Payslips</h2>
-                        <table class="payslip-table">
+                    <!-- View Responses -->
+                    <section class="view-responses">
+                        <h2>Responses</h2>
+                        <table class="responses-table">
                             <thead>
                                 <tr>
-                                    <th>Month</th>
+                                    <th>Date</th>
+                                    <th>Type</th>
+                                    <th>Message</th>
                                     <th>Status</th>
-                                    <th>Action</th>
+                                    <th>Response</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>November 2024</td>
-                                    <td>Paid</td>
-                                    <td><a href="payslip-november.pdf" download>Download</a></td>
+                                    <td>2024-12-01</td>
+                                    <td>Complaint</td>
+                                    <td>Issue with payroll calculation.</td>
+                                    <td>Resolved</td>
+                                    <td>We’ve updated your payroll. Please check again.</td>
                                 </tr>
                                 <tr>
-                                    <td>October 2024</td>
-                                    <td>Paid</td>
-                                    <td><a href="payslip-october.pdf" download>Download</a></td>
-                                </tr>
-                                <tr>
-                                    <td>September 2024</td>
-                                    <td>Paid</td>
-                                    <td><a href="payslip-september.pdf" download>Download</a></td>
+                                    <td>2024-11-25</td>
+                                    <td>Feedback</td>
+                                    <td>Request for flexible working hours.</td>
+                                    <td>Pending</td>
+                                    <td>Pending review.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -147,5 +162,6 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 
 </html>
