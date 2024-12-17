@@ -40,7 +40,8 @@
             <i class="fa-solid fa-layer-group fa-lg "></i> <a href="payroll.html">Payroll</a>
         </div>
         <div class="icons">
-            <i class="fa-regular fa-folder-open fa-lg "></i><a href="document.html">Documents</a> <!-- Fixed the closing tag -->
+            <i class="fa-regular fa-folder-open fa-lg "></i><a href="document.html">Documents</a>
+            <!-- Fixed the closing tag -->
         </div>
         <div class="icons">
 
@@ -59,7 +60,7 @@
                     d="M8.4 14H4.6C4.03995 14 3.75992 14 3.54601 14.109C3.35785 14.2049 3.20487 14.3578 3.10899 14.546C3 14.7599 3 15.0399 3 15.6V19.4C3 19.9601 3 20.2401 3.10899 20.454C3.20487 20.6422 3.35785 20.7951 3.54601 20.891C3.75992 21 4.03995 21 4.6 21H8.4C8.96005 21 9.24008 21 9.45399 20.891C9.64215 20.7951 9.79513 20.6422 9.89101 20.454C10 20.2401 10 19.9601 10 19.4V15.6C10 15.0399 10 14.7599 9.89101 14.546C9.79513 14.3578 9.64215 14.2049 9.45399 14.109C9.24008 14 8.96005 14 8.4 14Z"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            <p class="hover:text-[#4682B4]    hover:cursor-pointer text-wrap">Apps & Integration</p>
+            <p class="hover:text-[#4682B4]    hover:cursor-pointer text-wrap">Meetings </p>
 
         </div>
         <div class="icons">
@@ -77,7 +78,7 @@
         <div class="navbar">
             <div class="links">
                 <div class="prof">
-                    <h3>Welcome back,<span>Ronald!</span></h3>
+                    <h3>Welcome back,<span>Bentil</span></h3>
 
                 </div>
                 <div class="links-buttons">
@@ -91,100 +92,100 @@
                 </div>
             </div>
             <!---Put Your Code for the body HERE-->
-        <div class="main-content">
+            <div class="main-content">
 
-            <div class="grid">
-                <div>
-                    <i class="fa-solid fa-user"></i>
-                    <p>1022</p>
-                    <p>New Employees</p>
-                </div>
-                <div>
-                    <i class="fa-solid fa-users"></i>
-                    <p>238</p>
-                    <p>Resign Employees</p>
-                </div>
-                <div>
-                    <i class="fa-solid fa-calendar-days"></i>
-                    <p>23</p>
-                    <p>Employee on Leave</p>
-                </div>
-                <div>
-                    <i class="fa-solid fa-file"></i>
-                    <p>200</p>
-                    <p>New Applications</p>
-                </div>
-            </div><br> <br>
-            <div class="bar">
+                <div class="grid">
+                    <div>
+                        <i class="fa-solid fa-user"></i>
+                        <p>1022</p>
+                        <p>New Employees</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-users"></i>
+                        <p>238</p>
+                        <p>Resign Employees</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <p>23</p>
+                        <p>Employee on Leave</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-file"></i>
+                        <p>200</p>
+                        <p>New Applications</p>
+                    </div>
+                </div><br> <br>
+                <div class="bar">
 
-                <canvas id="attendanceChart" width="400" height="100"></canvas>
+                    <canvas id="attendanceChart" width="400" height="100"></canvas>
 
-                <script>
-                    const ctx = document.getElementById('attendanceChart').getContext('2d');
-                    const attendanceChart = new Chart(ctx, {
-                        type: 'bar', // Bar chart type
-                        data: {
-                            labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], // Days of the week
-                            datasets: [{
-                                label: 'Number of Attendees',
-                                data: [45, 50, 38, 55, 60,], // Example attendance data
-                                backgroundColor: [
-                                    'rgba(75, 192, 192, 0.2)', // Colors for the bars
-                                    'rgba(153, 102, 255, 0.2)',
-                                    'rgba(255, 159, 64, 0.2)',
-                                    'rgba(255, 99, 132, 0.2)',
-                                    'rgba(54, 162, 235, 0.2)',
-                                    'rgba(255, 206, 86, 0.2)',
-                                    'rgba(99, 255, 132, 0.2)'
-                                ],
-                                borderColor: [
-                                    'rgba(75, 192, 192, 1)',
-                                    'rgba(153, 102, 255, 1)',
-                                    'rgba(255, 159, 64, 1)',
-                                    'rgba(255, 99, 132, 1)',
-                                    'rgba(54, 162, 235, 1)',
-                                    'rgba(255, 206, 86, 1)',
-                                    'rgba(99, 255, 132, 1)'
-                                ],
-                                borderWidth: 1 // Thickness of bar borders
-                            }]
-                        },
-                        options: {
-                            scales: {
-                                y: {
-                                    beginAtZero: true // Start Y-axis at 0
-                                }
+                    <script>
+                        const ctx = document.getElementById('attendanceChart').getContext('2d');
+                        const attendanceChart = new Chart(ctx, {
+                            type: 'bar', // Bar chart type
+                            data: {
+                                labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], // Days of the week
+                                datasets: [{
+                                    label: 'Number of Attendees',
+                                    data: [45, 50, 38, 55, 60,], // Example attendance data
+                                    backgroundColor: [
+                                        'rgba(75, 192, 192, 0.2)', // Colors for the bars
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 159, 64, 0.2)',
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(99, 255, 132, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)',
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(99, 255, 132, 1)'
+                                    ],
+                                    borderWidth: 1 // Thickness of bar borders
+                                }]
                             },
-                            plugins: {
-                                legend: {
-                                    display: true // Show legend
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true // Start Y-axis at 0
+                                    }
+                                },
+                                plugins: {
+                                    legend: {
+                                        display: true // Show legend
+                                    }
                                 }
                             }
-                        }
-                    });
-                </script>
-            </div><br><br>
-            <div class="dashboard-flex">
+                        });
+                    </script>
+                </div><br><br>
+                <div class="dashboard-flex">
 
-                <div class="EmployeeStatus">
-                    <div class="Status">
-                        <h2>Employee <span>Status</span></h2>
-                        <div class="input-space">
-                            <input type="search" placeholder="search Employee......">
+                    <div class="EmployeeStatus">
+                        <div class="Status">
+                            <h2>Employee <span>Status</span></h2>
+                            <div class="input-space">
+                                <input type="search" placeholder="search Employee......">
+                            </div>
                         </div>
                     </div>
+
+                    <div class="todolist">
+                        <h2>Upcoming <span>Schedule</span> <i class="fa-solid fa-calendar-days"></i></h2>
+                    </div>
+
+
+
                 </div>
-
-                <div class="todolist">
-                    <h2>Upcoming <span>Schedule</span> <i class="fa-solid fa-calendar-days"></i></h2>
-                </div>
-
-
-
             </div>
-        </div>
 
-    </div>
+        </div>
 
 </body>
 
